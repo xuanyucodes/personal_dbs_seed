@@ -16,8 +16,8 @@ const App = () => {
             <Router>
                 <Header/>
                 <Switch>
-                        <Route path="/checkout" exact render={
-                            () => isLoggedIn? <Redirect to="/checkout"/> : <Login path="/login" setIsLoggedIn/>}
+                        <Route path="/loginorcheckout" exact render={
+                            () => isLoggedIn? <Redirect to="/checkout"/> : <Login path="/login" setIsLoggedIn={setIsLoggedIn}/>}
                         />
                         <Route path="/" exact component={Store} />
                         <Route path="/products/:id" exact component={Product} />
