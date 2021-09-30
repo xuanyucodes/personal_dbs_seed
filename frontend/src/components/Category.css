@@ -1,0 +1,13 @@
+img.product {
+    display: block;
+    min-height: 150px;
+    max-width: 250px;
+    max-height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form.ui.link.cards.centered div.content.withlinks {
+    background-color: #ff3333;
+}
+

@@ -30,4 +30,12 @@ router.get('/products', async (req, res) => {
     } catch(e) {res.status(500).send(e)}
 })
 
+// GET one products
+router.get('/products/:id', async (req, res) => {
+    try {
+        const product = await Product.find({id: req.params.id})
+        res.send(product)
+    } catch(e) {res.status(500).send(e)}
+})
+
 module.exports = router

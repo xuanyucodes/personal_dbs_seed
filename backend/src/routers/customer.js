@@ -21,4 +21,13 @@ router.get('/customers', async (req, res) => {
     } catch(e) {res.status(500).send(e)}
 })
 
+// login
+router.get('/login', async (req, res) => {
+    try{
+        const customer = await Customer.findOne({username: req.body.username, password: req.body.password})
+        if (!customer) {return res.send(404)}
+        res.send(customer)
+    } catch(e) {res.status(500).send(e)}
+})
+
 module.exports = router
