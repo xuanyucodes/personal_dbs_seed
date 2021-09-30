@@ -52,4 +52,5 @@ Despite just self-learning NodeJS in 2 weeks, I feel that I have managed to come
 
 <h2>Thoughts and Improvements</h2>
 1. While implementing Redux may be tedious (and may require further modules like Thunk for Axios calls), it would make the code a lot cleaner as there will be fewer props being sent down the components.
+
 2. Passwords are stored in plaintext for the backend. Can probably hash them as a security feature.
