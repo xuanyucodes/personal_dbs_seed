@@ -10,6 +10,7 @@ import Login from './Login';
 const App = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [cart, setCart] = useState({}); // to track shopping cart purchases of format {pdt_id: qty}
 
     return (
         <div className="ui container">
@@ -19,9 +20,11 @@ const App = () => {
                         <Route path="/loginorcheckout" exact render={
                             () => isLoggedIn? <Redirect to="/checkout"/> : <Login path="/login" setIsLoggedIn={setIsLoggedIn}/>}
                         />
-                        <Route path="/" exact component={Store} />
+                        {/* <Route path="/" exact component={Store} /> */}
+                        <Route path="/" exact render={() => <Store cart={cart} setCart={setCart}/>} />
                         <Route path="/products/:id" exact component={Product} />
-                        <Route path="/checkout" exact component={Checkout} />
+                        {/* <Route path="/checkout" exact component={Checkout} /> */}
+                        <Route path="/checkout" exact render={() => <Checkout cart={cart} setCart={setCart}/>} />
                     </Switch>
             </Router>
         </div>

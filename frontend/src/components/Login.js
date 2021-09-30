@@ -26,8 +26,8 @@ const Login = ({setIsLoggedIn}) => {
     return (        
         <div className="ui middle aligned center aligned grid">
             <div className="column" style={{width: '50%'}}>
-                <h2 class="ui image header" style={{marginTop: '20px', marginBottom: '20px'}}>
-                    <div class="content">
+                <h2 className="ui image header" style={{marginTop: '20px', marginBottom: '20px'}}>
+                    <div className="content">
                         Please log in to your account
                     </div>
                 </h2>

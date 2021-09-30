@@ -8,7 +8,12 @@ const Category = ({name, id, products, cart, setCart}) => {
     const cat_products = products.filter(pdt => pdt.category_id === id);
     
     const updateCart = e => {
-        const newCart = {...cart, [e.target.id]: e.target.valueAsNumber};
+        const newCart = {...cart, [e.target.id]: {
+            qtypurchased: e.target.valueAsNumber,
+            desc: e.target.name,
+            img: e.target.attributes.getNamedItem('img').value,
+            price: parseInt(e.target.attributes.getNamedItem('price').value)
+        }};
         setCart(newCart);
     };
 
@@ -24,7 +29,7 @@ const Category = ({name, id, products, cart, setCart}) => {
                     <p>Quantity Remaining: {pdt.qty}.</p>
                     <p> </p>
                     <div className="ui centered">
-                        <input id={pdt.id} name={pdt.id} type="number" step="1" min="0" max={pdt.qty} onChange={updateCart}/>
+                        <input id={pdt.id} name={pdt.title} img={pdt.image} price={pdt.price} value={cart[pdt.id]? cart[pdt.id].qtypurchased: 0} type="number" step="1" min="0" max={pdt.qty} onChange={updateCart}/>
                     </div>
                 </div>
             </div>

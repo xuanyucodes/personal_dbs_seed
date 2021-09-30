@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import api_call from '../api/api_call';
 import Category from './Category';
 
-const Store = () => {
+const Store = (props) => {
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [cart, setCart] = useState({}); // to track shopping cart purchases of format {pdt_id: qty}
+    // const [cart, setCart] = useState({}); // to track shopping cart purchases of format {pdt_id: qty}
 
     useEffect(() => {
         const getProducts = async () => {
@@ -27,7 +27,7 @@ const Store = () => {
     const renderList = categories.map(category => {
             return (
                 <div key={category.id} className="ui container" style={{marginBottom: '20px'}}>
-                    <Category name={category.name} id={category.id} products={products} cart={cart} setCart={setCart}/>
+                    <Category name={category.name} id={category.id} products={products} cart={props.cart} setCart={props.setCart}/>
                 </div>
             )
     });

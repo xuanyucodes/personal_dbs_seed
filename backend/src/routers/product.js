@@ -38,4 +38,14 @@ router.get('/products/:id', async (req, res) => {
     } catch(e) {res.status(500).send(e)}
 })
 
+// PATCH one product to change its quantity
+router.patch('/products/:id', async (req, res) => {
+    try {
+        const product = await Product.findOne({id: req.params.id})
+        product.qty -= req.body.qtypurchased
+        await product.save()
+        res.send(product)
+    } catch(e) {res.status(400).send(e)}
+})
+
 module.exports = router
