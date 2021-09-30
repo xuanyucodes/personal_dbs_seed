@@ -8,8 +8,6 @@ const Checkout = (props) => {
     const purchases = props.cart;
 
     const updateCart = e => {
-        // console.log(purchases)
-        // console.log(e);
         const newCart = {...purchases, [e.target.id]: {
             qtypurchased: e.target.valueAsNumber,
             desc: e.target.name,
@@ -22,16 +20,15 @@ const Checkout = (props) => {
     const renderedTableRows = Object.keys(purchases).map(productid => {
         const item = purchases[productid];
         if (item.qtypurchased > 0) {
-            console.log(item);
             totalPrice += item.qtypurchased * item.price;
             return (
-                <tr>
+                <tr key={productid}>
                     <td>
                         <h4 className="ui image header">
                             <img className="ui big image" src={item.img} alt={item.id}/>
                             <div className="content">
                                 {item.desc}
-                                <div className="sub header">Human Resources</div>   
+                                <div className="sub header"></div>   
                             </div>
                         </h4>
                     </td>

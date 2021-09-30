@@ -20,10 +20,8 @@ const App = () => {
                         <Route path="/loginorcheckout" exact render={
                             () => isLoggedIn? <Redirect to="/checkout"/> : <Login path="/login" setIsLoggedIn={setIsLoggedIn}/>}
                         />
-                        {/* <Route path="/" exact component={Store} /> */}
                         <Route path="/" exact render={() => <Store cart={cart} setCart={setCart}/>} />
                         <Route path="/products/:id" exact component={Product} />
-                        {/* <Route path="/checkout" exact component={Checkout} /> */}
                         <Route path="/checkout" exact render={() => <Checkout cart={cart} setCart={setCart}/>} />
                     </Switch>
             </Router>
