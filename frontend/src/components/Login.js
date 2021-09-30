@@ -25,25 +25,30 @@ const Login = ({setIsLoggedIn}) => {
 
     return (        
         <div className="ui middle aligned center aligned grid">
-            <div className="column">
-            <form className="ui large form" onSubmit={attemptLogin}>
-                <div className="ui stacked segment">
-                    <div className="field">
-                        <div className="ui left icon input">
-                            <i className="user icon"/>
-                            <input placeholder="Username" value={loginID} onChange={onLoginIDChange}/>
-                        </div>
+            <div className="column" style={{width: '50%'}}>
+                <h2 class="ui image header" style={{marginTop: '20px', marginBottom: '20px'}}>
+                    <div class="content">
+                        Please log in to your account
                     </div>
-                    <div className="field">
-                        <div className="ui left icon input">
-                            <i className="lock icon"/>
-                            <input value={password} placeholder="Password" onChange={onPasswordChange}/>
+                </h2>
+                <form className="ui large form" onSubmit={attemptLogin}>
+                    <div className="ui stacked segment">
+                        <div className="field">
+                            <div className="ui left icon input">
+                                <i className="user icon"/>
+                                <input placeholder="Username" value={loginID} onChange={onLoginIDChange}/>
+                            </div>
                         </div>
+                        <div className="field">
+                            <div className="ui left icon input">
+                                <i className="lock icon"/>
+                                <input value={password} placeholder="Password" onChange={onPasswordChange}/>
+                            </div>
+                        </div>
+                        <button type="submit" className="ui button red">Submit</button>
+                        <p className={activeErrorMsg} style={{marginTop: '20px'}}>Error! Please try again.</p>
                     </div>
-                    <button type="submit" className="ui button red">Submit</button>
-                    <p className={activeErrorMsg} style={{marginTop: '20px'}}>Error! Please try again.</p>
-                </div>
-            </form>
+                </form>
             </div>
             
         </div>

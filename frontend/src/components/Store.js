@@ -26,7 +26,7 @@ const Store = () => {
 
     const renderList = categories.map(category => {
             return (
-                <div key={category.id} className="ui container">
+                <div key={category.id} className="ui container" style={{marginBottom: '20px'}}>
                     <Category name={category.name} id={category.id} products={products} cart={cart} setCart={setCart}/>
                 </div>
             )

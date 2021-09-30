@@ -15,7 +15,7 @@ const Category = ({name, id, products, cart, setCart}) => {
     const display_pdts = cat_products.map(pdt => {
         return (
             <div key={pdt.id} className="card">
-                <img className="product" src={pdt.image} alt={pdt.title} />
+                <img className="product" src={pdt.image} alt={pdt.title} style={{marginTop: '10px', marginBottom: '10px'}}/>
                 <div className="content withlinks">
                     <Link style={{backgroundColor: '#ff3333', color: 'white'}} to={`/products/${pdt.id}`} className="header">{pdt.title}</Link>
                 </div>
