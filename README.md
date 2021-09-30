@@ -8,5 +8,16 @@ Backend: NodeJS
 
 | Task      |  Completion?|
 | ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| 1) User can login      | Done       |
+| 2) User can view all products   | Done        |
+| 3) User can add to cart   | Done        |
+| 4) User can view cart   | Done        |
+| 5) User can remove from cart   | Done        |
+| 6) User can checkout cart   | Done        |
+| ----------- | ----------- |
+| 1) User can login      | Done       |
+| 2) User can view all products   | Done        |
+| 3) User can add to cart   | Done        |
+| 4) User can view cart   | Done        |
+| 5) User can remove from cart   | Done        |
+| 6) User can checkout cart   | Done        |
