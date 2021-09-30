@@ -34,5 +34,12 @@ User can see more details about the product by clicking on its name. The route h
 When user clicks checkout, as he is not logged in, he is redirected to a login page. If he keys wrong info, an error is shown. 
 <img src='https://user-images.githubusercontent.com/43426532/135535715-5b59bdd8-abc0-45dc-ab60-aec5fd77ec31.png' />
 
+<h3>Checkout Page</h3>
+When user has successfully logged in, he will reach the checkout page. Here, he can further edit the quantity he requires by clicking the up/down controls in the input spinner. He can also go back to the store page <strong>and all the quantities he previously selected will still be shown</strong>. Since the shopping cart state is shared across all the various components and pages, it is reliable and makes for a smooth journey for the user (ie no need to restart his purchase journey).
+
+When the user clicks the purchase button, it will make an API call which will reduce the remaining amount respectively (fulfilling the FAQ requirement).
+<img src='https://user-images.githubusercontent.com/43426532/135536398-b5407a33-7adf-46cd-925c-c9f7ba74c91f.png' />
+
+
 
 
