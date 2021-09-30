@@ -37,9 +37,20 @@ When user clicks checkout, as he is not logged in, he is redirected to a login p
 <h3>Checkout Page</h3>
 When user has successfully logged in, he will reach the checkout page. Here, he can further edit the quantity he requires by clicking the up/down controls in the input spinner. He can also go back to the store page <strong>and all the quantities he previously selected will still be shown</strong>. Since the shopping cart state is shared across all the various components and pages, it is reliable and makes for a smooth journey for the user (ie no need to restart his purchase journey).
 
-When the user clicks the purchase button, it will make an API call which will reduce the remaining amount respectively (fulfilling the FAQ requirement).
+When the user clicks the purchase button, it will make an API call which will reduce the remaining amount respectively (fulfilling the FAQ requirement). See the console panel for proof of deduction.
 <img src='https://user-images.githubusercontent.com/43426532/135536398-b5407a33-7adf-46cd-925c-c9f7ba74c91f.png' />
 
+<h2>Backend</h2>
 
+Despite just self-learning NodeJS in 2 weeks, I feel that I have managed to come up with a good foundational system. Providing some Postman screenshots as proof of concepts. Note that the only API calls I have set up are mainly to Login, Create or Read a single or multiple Product / Customer / Category, and to adjust the remaining quantities when a purchase is made. I have not implemented anything to do with Orders.
 
+<h3>Logging In</h3>
+<img src='https://user-images.githubusercontent.com/43426532/135537117-445d7bab-e70f-4739-ad6e-eb600785a707.png' />
 
+<h3>Retrieving a Single Product (based on id)</h3>
+<img src='https://user-images.githubusercontent.com/43426532/135537441-755c8a6a-a0f2-41c7-a495-7dffbcd17991.png' />
+
+<h2>Thoughts and Improvements</h2>
+1. While implementing Redux may be tedious (and may require further modules like Thunk for Axios calls), it would make the code a lot cleaner as there will be fewer props being sent down the components.
+
+2. Passwords are stored in plaintext for the backend. Can probably hash them as a security feature.
